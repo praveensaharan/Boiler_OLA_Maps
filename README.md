@@ -15,8 +15,8 @@ Welcome to Olamaps! This project is a React-based web application that provides 
 
 To get started with Olamaps, follow these steps:
 
-1. Clone the repository: `git clone https://github.com/praveensaharan/OLA_Maps.git`
-2. Navigate to the project directory: `cd OLA_Maps`
+1. Clone the repository: `git clone https://github.com/praveensaharan/Boiler_OLA_Maps.git`
+2. Navigate to the project directory: `cd Boiler_OLA_Maps`
 3. Install the dependencies: `npm install`
 4. Create a `.env` file with: `OLA_API=xxxxxxxxxxx`
 5. Start the development server: `npm run dev`
