@@ -187,31 +187,37 @@ const MapComponent = () => {
   }, [map, origin, destination]);
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
-      <h1 className="text-4xl font-bold mb-6 text-blue-700">Central Map</h1>
-      {/* <p>{olaApiKey}</p> */}
-      <div className="w-full max-w-md mx-auto">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 text-gray-800">
+      <h1 className="text-5xl font-extrabold mb-8">Central Map</h1>
+
+      <div className="w-full max-w-md mx-auto bg-white p-6 rounded-lg shadow-xl">
+        <p className="text-lg font-medium mb-2">From:</p>
         <AddressAutocomplete
           onSelect={(address) => handleSelect(address, "origin")}
+          className="mb-4"
         />
+        <p className="text-lg font-medium mb-2">To:</p>
         <AddressAutocomplete
           onSelect={(address) => handleSelect(address, "destination")}
+          className="mb-4"
         />
       </div>
+
       {distance && (
-        <div className="mt-4 p-4 bg-white border border-gray-300 rounded-lg shadow-md">
-          <p className="text-lg font-semibold">
+        <div className="mt-6 p-6 bg-white border border-gray-300 rounded-lg shadow-xl">
+          <p className="text-xl font-semibold">
             Total distance between these two locations: {distance.toFixed(2)} km
           </p>
           {time && (
-            <p className="text-lg font-semibold">
+            <p className="text-xl font-semibold">
               Total time between these two locations: {time.toFixed(2)} minutes
             </p>
           )}
         </div>
       )}
+
       <div
-        className="w-full md:w-4/5 lg:w-3/4 h-[80vh] mt-6 border-4 border-gray-300 shadow-lg mb-10"
+        className="w-full md:w-4/5 lg:w-3/4 h-[80vh] mt-8 border border-gray-300 shadow-2xl mb-10 rounded-lg overflow-hidden"
         ref={mapContainerRef}
         id="central-map"
       />
